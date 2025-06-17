@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# Read URLs from urls.txt
 with open("data/nonfatals.txt", "r") as f:
     urls = [line.strip() for line in f if line.strip()]
 
@@ -31,8 +30,7 @@ for url in urls:
 
     except Exception as e:
         print(f"Failed to scrape {url}: {e}")
-
-# Save to CSV
+        
 df = pd.DataFrame(all_data)
 df.to_csv("data/nonfatalsdata.csv", index=False)
 print("Scraping completed and saved to data/output.csv")
