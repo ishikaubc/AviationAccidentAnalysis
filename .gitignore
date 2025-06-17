@@ -6,4 +6,4 @@ __pycache__/
 data/
 *.log
 *.env
-venv
+echo "venv/" >> .gitignore
